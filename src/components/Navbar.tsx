@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Search, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -35,7 +35,7 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8 items-center">
+          <nav className="hidden md:flex space-x-10 items-center">
             <Link to="/" className={`text-sm font-medium relative overflow-hidden group ${isActive('/') ? 'text-seo-blue' : 'text-seo-gray hover:text-seo-blue'}`}>
               Home
               <span className={`absolute bottom-0 left-0 h-0.5 bg-seo-blue transition-all duration-300 ${isActive('/') ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
@@ -52,14 +52,6 @@ const Navbar = () => {
               Contact
               <span className={`absolute bottom-0 left-0 h-0.5 bg-seo-blue transition-all duration-300 ${isActive('/contact') ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
             </Link>
-            <div className="search-field">
-              <Search className="search-icon" size={18} />
-              <input 
-                className="search-input" 
-                type="text" 
-                placeholder="Search for SEO tips..." 
-              />
-            </div>
           </nav>
 
           {/* Mobile Menu Toggle */}
@@ -112,14 +104,6 @@ const Navbar = () => {
             >
               Contact
             </Link>
-            <div className="search-field mt-4">
-              <Search className="search-icon" size={18} />
-              <input 
-                className="search-input" 
-                type="text" 
-                placeholder="Search for SEO tips..." 
-              />
-            </div>
           </nav>
         </div>
       </div>
