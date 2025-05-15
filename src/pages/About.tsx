@@ -1,18 +1,17 @@
-
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { Award, BookOpen, Briefcase, User } from 'lucide-react';
+import { Award, BookOpen, Briefcase, User, Circle } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import ExperienceCard, { Experience } from '../components/ExperienceCard';
 import CustomCursor from '../components/CustomCursor';
 import { Progress } from '../components/ui/progress';
 import { Card, CardContent } from '../components/ui/card';
+import { HoverCard, HoverCardTrigger, HoverCardContent } from '@/components/ui/hover-card';
 
-const experiences: Experience[] = [
+const experiences = [
   {
     id: '1',
-    company: 'Global Digital Agency',
+    company: 'Vertex Digital Solutions',
     position: 'Senior SEO Strategist',
     period: '2021 - Present',
     description: 'Leading SEO strategy for enterprise clients across various industries, managing a team of SEO specialists and delivering high-impact campaigns.',
@@ -21,12 +20,11 @@ const experiences: Experience[] = [
       'Implemented advanced technical SEO frameworks resulting in significant ranking improvements',
       'Led a team of 5 SEO specialists and developed standardized processes',
       'Published industry research that was featured in major marketing publications'
-    ],
-    logo: 'https://images.unsplash.com/photo-1560179707-f14e90ef3623?ixlib=rb-4.0.3&auto=format&fit=crop&w=64&h=64&q=80'
+    ]
   },
   {
     id: '2',
-    company: 'Tech Innovators Inc.',
+    company: 'Horizon Tech Partners',
     position: 'SEO Manager',
     period: '2018 - 2021',
     description: 'Managed SEO strategy for a SaaS company, focusing on competitive B2B keyword rankings and lead generation through organic search.',
@@ -35,12 +33,11 @@ const experiences: Experience[] = [
       'Redesigned the site architecture resulting in a 43% improvement in crawlability',
       'Implemented structured data that led to enhanced SERP features',
       'Developed content strategy that captured 65% more featured snippets'
-    ],
-    logo: 'https://images.unsplash.com/photo-1560179707-f14e90ef3623?ixlib=rb-4.0.3&auto=format&fit=crop&w=64&h=64&q=80'
+    ]
   },
   {
     id: '3',
-    company: 'E-commerce Solutions',
+    company: 'NexGen eCommerce',
     position: 'SEO Specialist',
     period: '2016 - 2018',
     description: 'Implemented technical and on-page SEO strategies for e-commerce clients, with a focus on product page optimization and conversion rate improvement.',
@@ -49,12 +46,11 @@ const experiences: Experience[] = [
       'Improved average page load speed by 65% through technical enhancements',
       'Developed category page strategy that increased organic visibility by 112%',
       'Created internal linking structure that improved crawl efficiency by 47%'
-    ],
-    logo: 'https://images.unsplash.com/photo-1560179707-f14e90ef3623?ixlib=rb-4.0.3&auto=format&fit=crop&w=64&h=64&q=80'
+    ]
   },
   {
     id: '4',
-    company: 'Digital Marketing Institute',
+    company: 'Pinnacle Marketing Group',
     position: 'Marketing Associate',
     period: '2014 - 2016',
     description: 'Started career in digital marketing with focus on content creation, social media management, and basic SEO implementation.',
@@ -63,8 +59,7 @@ const experiences: Experience[] = [
       'Managed social media campaigns with 45% engagement improvement',
       'Learned and implemented foundational SEO techniques',
       'Earned certifications in Google Analytics and Google Ads'
-    ],
-    logo: 'https://images.unsplash.com/photo-1560179707-f14e90ef3623?ixlib=rb-4.0.3&auto=format&fit=crop&w=64&h=64&q=80'
+    ]
   }
 ];
 
@@ -187,20 +182,73 @@ const About = () => {
         </div>
       </section>
       
-      {/* Experience Section */}
-      <section className="py-20 bg-white">
+      {/* Experience Section - Roadmap Layout */}
+      <section className="py-20 bg-white relative">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-seo-blue to-seo-purple bg-clip-text text-transparent">Professional Experience</h2>
+            <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-seo-blue to-seo-purple bg-clip-text text-transparent">Professional Journey</h2>
             <div className="w-20 h-1 bg-gradient-to-r from-seo-blue to-seo-purple mx-auto mb-6"></div>
             <p className="text-gray-600 text-lg">
               A decade of experience helping businesses achieve remarkable growth through strategic SEO implementation.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 gap-8 max-w-5xl mx-auto">
+          {/* Roadmap Timeline */}
+          <div className="relative max-w-5xl mx-auto">
+            {/* Vertical Line */}
+            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-seo-blue to-seo-purple"></div>
+            
             {experiences.map((experience, index) => (
-              <ExperienceCard key={experience.id} experience={experience} index={index} />
+              <div 
+                key={experience.id} 
+                className={`relative z-10 mb-12 ${
+                  index % 2 === 0 ? 'md:ml-auto md:mr-[50%]' : 'md:mr-auto md:ml-[50%]'
+                }`}
+                style={{ animationDelay: `${index * 150}ms` }}
+              >
+                {/* Timeline node */}
+                <div className="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/3 w-6 h-6 rounded-full bg-white border-4 border-seo-purple z-20"></div>
+                
+                {/* Content Card */}
+                <div className={`
+                  relative bg-white shadow-lg rounded-xl overflow-hidden p-6 md:w-[90%] mx-auto
+                  transition-all duration-300 hover:shadow-xl hover:-translate-y-1
+                  ${index % 2 === 0 ? 'md:mr-10' : 'md:ml-10'}
+                `}>
+                  {/* Header */}
+                  <div className="flex flex-col space-y-1 mb-4">
+                    <h3 className="font-bold text-xl text-seo-blue">{experience.position}</h3>
+                    <p className="text-gray-800 font-medium text-lg">{experience.company}</p>
+                    <div className="inline-block bg-gray-100 text-gray-600 px-3 py-1 text-sm font-medium rounded-full">
+                      {experience.period}
+                    </div>
+                  </div>
+                  
+                  <div className="bg-gray-50 p-4 rounded-lg mb-4">
+                    <p className="text-gray-700">{experience.description}</p>
+                  </div>
+                  
+                  {/* Achievements */}
+                  <HoverCard>
+                    <HoverCardTrigger asChild>
+                      <button className="text-sm font-semibold text-seo-blue hover:text-seo-purple transition-colors">
+                        View Key Achievements
+                      </button>
+                    </HoverCardTrigger>
+                    <HoverCardContent className="w-80">
+                      <div className="space-y-2">
+                        <h4 className="font-semibold text-sm uppercase tracking-wider text-gray-700">Key Achievements</h4>
+                        {experience.achievements.map((achievement, i) => (
+                          <div key={i} className="flex items-start p-2 bg-gray-50 rounded-lg">
+                            <span className="text-seo-green mr-2 font-bold">•</span>
+                            <span className="text-gray-700 text-sm">{achievement}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </HoverCardContent>
+                  </HoverCard>
+                </div>
+              </div>
             ))}
           </div>
         </div>
