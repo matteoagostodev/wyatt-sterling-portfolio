@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Search } from 'lucide-react';
@@ -114,9 +113,10 @@ const Projects = () => {
       <CustomCursor />
       <Navbar />
       
-      {/* Hero Section */}
-      <section className="pt-36 pb-20 bg-gradient-to-br from-gray-50 to-blue-50">
-        <div className="container mx-auto px-4">
+      {/* Hero Section - Now with fading effect */}
+      <section className="pt-36 pb-20 bg-gradient-to-br from-gray-50 to-blue-50 relative">
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-white"></div>
+        <div className="container mx-auto px-4 relative">
           <div className="text-center max-w-3xl mx-auto">
             <h1 className="text-4xl font-bold mb-6">SEO Success Stories</h1>
             <p className="text-lg text-gray-600 mb-10">
