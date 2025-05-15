@@ -1,10 +1,13 @@
+
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { Award, BookOpen, Briefcase, User, FileText } from 'lucide-react';
+import { Award, BookOpen, Briefcase, User } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import ExperienceCard, { Experience } from '../components/ExperienceCard';
 import CustomCursor from '../components/CustomCursor';
+import { Progress } from '../components/ui/progress';
+import { Card, CardContent } from '../components/ui/card';
 
 const experiences: Experience[] = [
   {
@@ -122,63 +125,63 @@ const About = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="pt-36 pb-20 bg-gradient-to-br from-gray-50 to-blue-50">
+      <section className="py-24 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="container mx-auto px-4">
-          <div className="flex justify-center">
-            <div className="max-w-2xl text-center">
-              <h1 className="text-4xl font-bold mb-6">About Me</h1>
-              <p className="text-lg text-gray-600 mb-8">
-                I'm an experienced SEO specialist with over 10 years of expertise in driving organic growth for businesses of all sizes. My data-driven approach focuses on delivering measurable results that directly impact your bottom line.
-              </p>
+          <div className="max-w-3xl mx-auto text-center">
+            <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-seo-blue to-seo-purple bg-clip-text text-transparent">About Me</h1>
+            <p className="text-xl text-gray-600 mb-10">
+              I'm an experienced SEO specialist with over 10 years of expertise in driving organic growth for businesses of all sizes. 
+              My data-driven approach focuses on delivering measurable results that directly impact your bottom line.
+            </p>
+            
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              <Card className="bg-white border-0 shadow-md hover:shadow-lg transition-shadow">
+                <CardContent className="p-6 flex flex-col items-center">
+                  <div className="w-14 h-14 rounded-full bg-blue-100 flex items-center justify-center mb-4">
+                    <Briefcase className="h-7 w-7 text-seo-blue" />
+                  </div>
+                  <div className="text-center">
+                    <h3 className="text-2xl font-bold">10+</h3>
+                    <p className="text-sm text-gray-500">Years Experience</p>
+                  </div>
+                </CardContent>
+              </Card>
               
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 mb-8">
-                <div className="flex flex-col items-center">
-                  <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mb-3">
-                    <Briefcase className="h-6 w-6 text-seo-blue" />
+              <Card className="bg-white border-0 shadow-md hover:shadow-lg transition-shadow">
+                <CardContent className="p-6 flex flex-col items-center">
+                  <div className="w-14 h-14 rounded-full bg-purple-100 flex items-center justify-center mb-4">
+                    <User className="h-7 w-7 text-seo-purple" />
                   </div>
-                  <div>
-                    <h3 className="font-bold">10+ Years</h3>
-                    <p className="text-sm text-gray-600">Experience</p>
+                  <div className="text-center">
+                    <h3 className="text-2xl font-bold">200+</h3>
+                    <p className="text-sm text-gray-500">Clients</p>
                   </div>
-                </div>
-                
-                <div className="flex flex-col items-center">
-                  <div className="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center mb-3">
-                    <User className="h-6 w-6 text-seo-purple" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold">200+</h3>
-                    <p className="text-sm text-gray-600">Clients</p>
-                  </div>
-                </div>
-                
-                <div className="flex flex-col items-center">
-                  <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center mb-3">
-                    <Award className="h-6 w-6 text-seo-green" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold">15+</h3>
-                    <p className="text-sm text-gray-600">Awards</p>
-                  </div>
-                </div>
-                
-                <div className="flex flex-col items-center">
-                  <div className="w-12 h-12 rounded-full bg-orange-100 flex items-center justify-center mb-3">
-                    <BookOpen className="h-6 w-6 text-seo-orange" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold">25+</h3>
-                    <p className="text-sm text-gray-600">Certifications</p>
-                  </div>
-                </div>
-              </div>
+                </CardContent>
+              </Card>
               
-              <div className="text-center">
-                <h3 className="text-xl font-bold mb-3">My Approach</h3>
-                <p className="text-gray-600">
-                  I believe in transparent, ethical SEO practices that build sustainable organic growth. By combining technical expertise with creative content strategies, I help businesses establish a strong online presence that drives real business results.
-                </p>
-              </div>
+              <Card className="bg-white border-0 shadow-md hover:shadow-lg transition-shadow">
+                <CardContent className="p-6 flex flex-col items-center">
+                  <div className="w-14 h-14 rounded-full bg-green-100 flex items-center justify-center mb-4">
+                    <Award className="h-7 w-7 text-seo-green" />
+                  </div>
+                  <div className="text-center">
+                    <h3 className="text-2xl font-bold">15+</h3>
+                    <p className="text-sm text-gray-500">Awards</p>
+                  </div>
+                </CardContent>
+              </Card>
+              
+              <Card className="bg-white border-0 shadow-md hover:shadow-lg transition-shadow">
+                <CardContent className="p-6 flex flex-col items-center">
+                  <div className="w-14 h-14 rounded-full bg-orange-100 flex items-center justify-center mb-4">
+                    <BookOpen className="h-7 w-7 text-seo-orange" />
+                  </div>
+                  <div className="text-center">
+                    <h3 className="text-2xl font-bold">25+</h3>
+                    <p className="text-sm text-gray-500">Certifications</p>
+                  </div>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </div>
@@ -189,12 +192,13 @@ const About = () => {
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl font-bold mb-4">Professional Experience</h2>
+            <div className="w-20 h-1 bg-gradient-to-r from-seo-blue to-seo-purple mx-auto mb-4"></div>
             <p className="text-gray-600">
               A decade of experience in SEO strategy, implementation, and optimization across diverse industries and business models.
             </p>
           </div>
           
-          <div className="space-y-12">
+          <div className="space-y-12 max-w-4xl mx-auto">
             {experiences.map((experience, index) => (
               <ExperienceCard key={experience.id} experience={experience} index={index} />
             ))}
@@ -207,24 +211,23 @@ const About = () => {
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl font-bold mb-4">Technical Skills</h2>
+            <div className="w-20 h-1 bg-gradient-to-r from-seo-blue to-seo-purple mx-auto mb-4"></div>
             <p className="text-gray-600">
               Specialized expertise across various aspects of search engine optimization and digital marketing.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {skills.map((skill, index) => (
               <div key={index} className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
                 <div className="flex justify-between items-center mb-3">
                   <h3 className="font-semibold">{skill.name}</h3>
                   <span className="text-sm font-medium">{skill.level}%</span>
                 </div>
-                <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
-                  <div 
-                    className="h-full data-flow-gradient rounded-full origin-left"
-                    style={{ width: `${skill.level}%`, transform: 'scaleX(0)', animation: 'animate-reveal 1s forwards' }}
-                  ></div>
-                </div>
+                <Progress 
+                  value={skill.level} 
+                  className="h-2 bg-gray-200"
+                />
               </div>
             ))}
           </div>
@@ -236,83 +239,33 @@ const About = () => {
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl font-bold mb-4">Certifications</h2>
+            <div className="w-20 h-1 bg-gradient-to-r from-seo-blue to-seo-purple mx-auto mb-4"></div>
             <p className="text-gray-600">
               Continuous learning and professional development through industry-recognized certifications.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {certifications.map((certification, index) => (
-              <div 
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+            {certifications.map((certification) => (
+              <Card 
                 key={certification.id} 
-                className="bg-white rounded-xl border border-gray-100 p-6 hover:shadow-lg transition-shadow"
+                className="bg-white border-0 shadow-md hover:shadow-xl transition-all hover:translate-y-[-5px]"
               >
-                <div className="flex items-center mb-4">
-                  <img 
-                    src={certification.icon} 
-                    alt={certification.issuer} 
-                    className="w-10 h-10 rounded-full object-cover mr-3"
-                  />
-                  <span className="text-sm text-gray-500">{certification.issuer}</span>
-                </div>
-                
-                <h3 className="text-lg font-semibold mb-2">{certification.title}</h3>
-                <p className="text-sm text-seo-blue">{certification.year}</p>
-              </div>
+                <CardContent className="p-6">
+                  <div className="flex items-center mb-4">
+                    <img 
+                      src={certification.icon} 
+                      alt={certification.issuer} 
+                      className="w-10 h-10 rounded-full object-cover mr-3"
+                    />
+                    <span className="text-sm text-gray-500">{certification.issuer}</span>
+                  </div>
+                  
+                  <h3 className="text-lg font-semibold mb-2">{certification.title}</h3>
+                  <p className="text-sm text-seo-blue">{certification.year}</p>
+                </CardContent>
+              </Card>
             ))}
-          </div>
-        </div>
-      </section>
-      
-      {/* Publications Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl font-bold mb-4">Publications & Contributions</h2>
-            <p className="text-gray-600">
-              Sharing knowledge and insights through industry publications and speaking engagements.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-              <div className="h-1 bg-seo-blue"></div>
-              <div className="p-6">
-                <div className="flex items-center mb-4">
-                  <FileText className="h-5 w-5 text-seo-blue mr-2" />
-                  <span className="text-sm text-gray-500">Article</span>
-                </div>
-                <h3 className="text-lg font-semibold mb-2">The Future of SEO: AI and Machine Learning</h3>
-                <p className="text-sm text-gray-600 mb-4">Published in Search Engine Journal, 2024</p>
-                <a href="#" className="text-seo-blue hover:underline text-sm font-medium">Read Article →</a>
-              </div>
-            </div>
-            
-            <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-              <div className="h-1 bg-seo-purple"></div>
-              <div className="p-6">
-                <div className="flex items-center mb-4">
-                  <FileText className="h-5 w-5 text-seo-purple mr-2" />
-                  <span className="text-sm text-gray-500">Study</span>
-                </div>
-                <h3 className="text-lg font-semibold mb-2">E-commerce SEO: Conversion Rate Optimization</h3>
-                <p className="text-sm text-gray-600 mb-4">Published in Moz Blog, 2023</p>
-                <a href="#" className="text-seo-purple hover:underline text-sm font-medium">Read Study →</a>
-              </div>
-            </div>
-            
-            <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-              <div className="h-1 bg-seo-green"></div>
-              <div className="p-6">
-                <div className="flex items-center mb-4">
-                  <FileText className="h-5 w-5 text-seo-green mr-2" />
-                  <span className="text-sm text-gray-500">Webinar</span>
-                </div>
-                <h3 className="text-lg font-semibold mb-2">Technical SEO for JavaScript Frameworks</h3>
-                <p className="text-sm text-gray-600 mb-4">Hosted by SEMrush, 2023</p>
-                <a href="#" className="text-seo-green hover:underline text-sm font-medium">Watch Recording →</a>
-              </div>
-            </div>
           </div>
         </div>
       </section>
