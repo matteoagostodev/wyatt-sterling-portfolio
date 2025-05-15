@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Award, BookOpen, Briefcase, User, FileText } from 'lucide-react';
@@ -125,16 +124,16 @@ const About = () => {
       {/* Hero Section */}
       <section className="pt-36 pb-20 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
+          <div className="flex justify-center">
+            <div className="max-w-2xl text-center">
               <h1 className="text-4xl font-bold mb-6">About Me</h1>
               <p className="text-lg text-gray-600 mb-8">
                 I'm an experienced SEO specialist with over 10 years of expertise in driving organic growth for businesses of all sizes. My data-driven approach focuses on delivering measurable results that directly impact your bottom line.
               </p>
               
-              <div className="grid grid-cols-2 gap-6 mb-8">
-                <div className="flex items-center">
-                  <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 mb-8">
+                <div className="flex flex-col items-center">
+                  <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mb-3">
                     <Briefcase className="h-6 w-6 text-seo-blue" />
                   </div>
                   <div>
@@ -143,8 +142,8 @@ const About = () => {
                   </div>
                 </div>
                 
-                <div className="flex items-center">
-                  <div className="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center mr-4">
+                <div className="flex flex-col items-center">
+                  <div className="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center mb-3">
                     <User className="h-6 w-6 text-seo-purple" />
                   </div>
                   <div>
@@ -153,8 +152,8 @@ const About = () => {
                   </div>
                 </div>
                 
-                <div className="flex items-center">
-                  <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center mr-4">
+                <div className="flex flex-col items-center">
+                  <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center mb-3">
                     <Award className="h-6 w-6 text-seo-green" />
                   </div>
                   <div>
@@ -163,8 +162,8 @@ const About = () => {
                   </div>
                 </div>
                 
-                <div className="flex items-center">
-                  <div className="w-12 h-12 rounded-full bg-orange-100 flex items-center justify-center mr-4">
+                <div className="flex flex-col items-center">
+                  <div className="w-12 h-12 rounded-full bg-orange-100 flex items-center justify-center mb-3">
                     <BookOpen className="h-6 w-6 text-seo-orange" />
                   </div>
                   <div>
@@ -174,26 +173,12 @@ const About = () => {
                 </div>
               </div>
               
-              <div className="space-y-4">
-                <h3 className="text-xl font-bold">My Approach</h3>
+              <div className="text-center">
+                <h3 className="text-xl font-bold mb-3">My Approach</h3>
                 <p className="text-gray-600">
                   I believe in transparent, ethical SEO practices that build sustainable organic growth. By combining technical expertise with creative content strategies, I help businesses establish a strong online presence that drives real business results.
                 </p>
               </div>
-            </div>
-            
-            <div className="relative">
-              <div className="relative z-10 rounded-xl overflow-hidden shadow-xl transform transition-transform duration-700 hover:scale-105">
-                <img 
-                  src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                  alt="SEO Specialist" 
-                  className="w-full object-cover"
-                />
-              </div>
-              
-              {/* Decorative elements */}
-              <div className="absolute top-0 -right-10 w-40 h-40 bg-seo-blue opacity-10 rounded-full animate-float" style={{ animationDelay: '0s' }}></div>
-              <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-seo-purple opacity-10 rounded-full animate-float" style={{ animationDelay: '1.5s' }}></div>
             </div>
           </div>
         </div>
