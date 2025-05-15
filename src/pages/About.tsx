@@ -190,15 +190,15 @@ const About = () => {
       {/* Experience Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl font-bold mb-4">Professional Experience</h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-seo-blue to-seo-purple mx-auto mb-4"></div>
-            <p className="text-gray-600">
-              A decade of experience in SEO strategy, implementation, and optimization across diverse industries and business models.
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-seo-blue to-seo-purple bg-clip-text text-transparent">Professional Experience</h2>
+            <div className="w-20 h-1 bg-gradient-to-r from-seo-blue to-seo-purple mx-auto mb-6"></div>
+            <p className="text-gray-600 text-lg">
+              A decade of experience helping businesses achieve remarkable growth through strategic SEO implementation.
             </p>
           </div>
           
-          <div className="space-y-12 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 gap-8 max-w-5xl mx-auto">
             {experiences.map((experience, index) => (
               <ExperienceCard key={experience.id} experience={experience} index={index} />
             ))}
@@ -227,6 +227,7 @@ const About = () => {
                 <Progress 
                   value={skill.level} 
                   className="h-2 bg-gray-200"
+                  indicatorClassName="bg-gradient-to-r from-seo-blue to-seo-purple"
                 />
               </div>
             ))}

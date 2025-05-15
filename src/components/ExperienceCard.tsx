@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Badge } from "@/components/ui/badge";
 
 export interface Experience {
   id: string;
@@ -8,7 +9,7 @@ export interface Experience {
   period: string;
   description: string;
   achievements: string[];
-  logo: string;
+  logo?: string; // Made optional since we won't be using it
 }
 
 interface ExperienceCardProps {
@@ -19,55 +20,41 @@ interface ExperienceCardProps {
 const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience, index }) => {
   return (
     <div 
-      className="group relative rounded-xl overflow-hidden"
+      className="group bg-white shadow-md rounded-xl overflow-hidden transition-all duration-300 group-hover:shadow-xl border-l-4 border-seo-blue hover:border-seo-purple"
       style={{ 
         animationDelay: `${index * 150}ms`,
       }}
     >
-      {/* Diagonal connector line */}
-      {index > 0 && (
-        <div className="absolute -top-12 -left-12 w-24 h-24 border-b-2 border-r-2 border-dashed border-gray-200 rounded-br-3xl z-0 hidden lg:block"></div>
-      )}
-      
-      <div className="bg-white shadow-md rounded-xl overflow-hidden relative z-10 transition-all duration-300 group-hover:shadow-xl">
-        <div className="p-6">
-          <div className="flex items-center justify-between mb-4">
-            <div className="flex items-center">
-              <div className="w-12 h-12 rounded-full overflow-hidden bg-gray-100 mr-4 flex items-center justify-center">
-                <img
-                  src={experience.logo}
-                  alt={experience.company}
-                  className="w-8 h-8 object-contain"
-                />
-              </div>
-              <div>
-                <h3 className="font-bold text-lg">{experience.position}</h3>
-                <p className="text-seo-blue">{experience.company}</p>
-              </div>
-            </div>
-            <div className="px-3 py-1 bg-gray-100 rounded-full text-xs text-gray-600">
-              {experience.period}
-            </div>
+      <div className="p-6">
+        <div className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:justify-between sm:items-start mb-4">
+          <div>
+            <h3 className="font-bold text-xl text-seo-blue">{experience.position}</h3>
+            <p className="text-gray-800 font-medium text-lg">{experience.company}</p>
           </div>
-          
-          <p className="text-gray-600 mb-4">{experience.description}</p>
-          
-          <div className="space-y-2">
-            <h4 className="font-semibold text-sm text-gray-700">Key Achievements:</h4>
-            <ul className="space-y-2">
-              {experience.achievements.map((achievement, i) => (
-                <li key={i} className="flex items-baseline text-sm">
-                  <span className="text-seo-green mr-2">•</span>
-                  <span className="text-gray-600">{achievement}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <Badge variant="outline" className="bg-gray-100 text-gray-600 px-3 py-1 text-sm font-medium">
+            {experience.period}
+          </Badge>
         </div>
         
-        {/* Bottom gradient line */}
-        <div className="h-1 w-full bg-gradient-to-r from-seo-blue to-seo-purple transform origin-left transition-transform duration-500 group-hover:scale-x-100 scale-x-0"></div>
+        <div className="bg-gray-50 p-4 rounded-lg mb-4">
+          <p className="text-gray-700">{experience.description}</p>
+        </div>
+        
+        <div>
+          <h4 className="font-semibold text-sm uppercase tracking-wider text-gray-700 mb-3">Key Achievements</h4>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+            {experience.achievements.map((achievement, i) => (
+              <div key={i} className="flex items-start p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                <span className="text-seo-green mr-2 font-bold">•</span>
+                <span className="text-gray-700 text-sm">{achievement}</span>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
+      
+      {/* Bottom gradient line */}
+      <div className="h-1 w-full bg-gradient-to-r from-seo-blue to-seo-purple"></div>
     </div>
   );
 };
