@@ -7,7 +7,7 @@ import Footer from '../components/Footer';
 import CustomCursor from '../components/CustomCursor';
 import SearchAnimation from '../components/SearchAnimation';
 import RankingMetrics from '../components/RankingMetrics';
-import KeywordCluster from '../components/KeywordCluster';
+import KeywordVisualizer from '../components/KeywordVisualizer';
 import SeoProcess from '../components/SeoProcess';
 
 const testimonials = [
@@ -311,7 +311,7 @@ const Index = () => {
             </div>
             
             <div className="transform transition-transform duration-700 hover:scale-105">
-              <KeywordCluster />
+              <KeywordVisualizer />
             </div>
           </div>
         </div>
