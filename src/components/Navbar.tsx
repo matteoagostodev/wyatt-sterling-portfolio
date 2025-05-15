@@ -9,6 +9,7 @@ const Navbar = () => {
   const location = useLocation();
 
   const isActive = (path: string) => location.pathname === path;
+  const isHomepage = location.pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -70,6 +71,11 @@ const Navbar = () => {
           </button>
         </div>
       </div>
+
+      {/* Add gradient overlay that fades out for non-homepage pages */}
+      {!isHomepage && (
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-blue-50 to-transparent -z-10"></div>
+      )}
 
       {/* Mobile Menu */}
       <div 
