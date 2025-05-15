@@ -1,7 +1,7 @@
 
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { TrendingUp, Award, Database, Users, Rocket } from 'lucide-react';
+import { TrendingUp, Award, Database, Users, Rocket, Search } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import CustomCursor from '../components/CustomCursor';
@@ -17,7 +17,7 @@ const testimonials = [
     position: 'Marketing Director',
     company: 'TechStart Inc.',
     image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80',
-    quote: 'Working with this SEO specialist has transformed our digital presence. Our organic traffic has increased by 167% in just six months, and we're now ranking for keywords we never thought possible.'
+    quote: 'Working with this SEO specialist has transformed our digital presence. Our organic traffic has increased by 167% in just six months, and we\'re now ranking for keywords we never thought possible.'
   },
   {
     id: '2',
@@ -25,7 +25,7 @@ const testimonials = [
     position: 'CEO',
     company: 'Innovative Solutions',
     image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80',
-    quote: 'The strategic approach to SEO delivered real business results. We've seen a 43% increase in qualified leads coming from organic search since implementing the recommended changes.'
+    quote: 'The strategic approach to SEO delivered real business results. We\'ve seen a 43% increase in qualified leads coming from organic search since implementing the recommended changes.'
   },
   {
     id: '3',
