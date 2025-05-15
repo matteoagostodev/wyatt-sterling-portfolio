@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Award, BookOpen, Briefcase, User, Circle } from 'lucide-react';
@@ -147,9 +148,10 @@ const About = () => {
       <CustomCursor />
       <Navbar />
       
-      {/* Hero Section */}
-      <section className="py-24 bg-gradient-to-br from-gray-50 to-blue-50">
-        <div className="container mx-auto px-4">
+      {/* Hero Section - Now with fading effect */}
+      <section className="py-24 bg-gradient-to-br from-gray-50 to-blue-50 relative">
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-white"></div>
+        <div className="container mx-auto px-4 relative">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-seo-blue to-seo-purple bg-clip-text text-transparent">About Me</h1>
             <p className="text-xl text-gray-600 mb-10">
