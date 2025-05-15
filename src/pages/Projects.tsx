@@ -1,9 +1,11 @@
+
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Search } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import ProjectCard, { Project } from '../components/ProjectCard';
+import ProjectDetail from '../components/ProjectDetail';
 import CustomCursor from '../components/CustomCursor';
 
 const projects: Project[] = [
@@ -90,6 +92,7 @@ const projects: Project[] = [
 const Projects = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [filterType, setFilterType] = useState<string | null>(null);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const location = useLocation();
 
   useEffect(() => {
@@ -107,6 +110,18 @@ const Projects = () => {
   });
 
   const projectTypes = Array.from(new Set(projects.map(project => project.type)));
+
+  const handleViewCaseStudy = (project: Project) => {
+    setSelectedProject(project);
+    // Prevent body scrolling when modal is open
+    document.body.style.overflow = 'hidden';
+  };
+
+  const handleCloseDetail = () => {
+    setSelectedProject(null);
+    // Re-enable body scrolling when modal is closed
+    document.body.style.overflow = 'auto';
+  };
 
   return (
     <>
@@ -168,7 +183,12 @@ const Projects = () => {
           {filteredProjects.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredProjects.map((project, index) => (
-                <ProjectCard key={project.id} project={project} index={index} />
+                <ProjectCard 
+                  key={project.id} 
+                  project={project} 
+                  index={index} 
+                  onViewCaseStudy={handleViewCaseStudy}
+                />
               ))}
             </div>
           ) : (
@@ -181,6 +201,14 @@ const Projects = () => {
           )}
         </div>
       </section>
+      
+      {/* Project Detail Modal */}
+      {selectedProject && (
+        <ProjectDetail 
+          project={selectedProject} 
+          onClose={handleCloseDetail} 
+        />
+      )}
       
       {/* CTA Section */}
       <section className="bg-gradient-to-r from-seo-blue to-seo-purple py-20 text-white">

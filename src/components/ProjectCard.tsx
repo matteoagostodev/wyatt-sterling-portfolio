@@ -1,6 +1,5 @@
 
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { TrendingUp, Link as LinkIcon, Search } from 'lucide-react';
 
 export interface Project {
@@ -20,9 +19,10 @@ export interface Project {
 interface ProjectCardProps {
   project: Project;
   index: number;
+  onViewCaseStudy: (project: Project) => void;
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, onViewCaseStudy }) => {
   return (
     <div 
       className="portfolio-item rounded-xl overflow-hidden bg-white shadow-md hover:shadow-xl transition-all duration-300"
@@ -78,12 +78,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
           </div>
         </div>
         
-        <Link 
-          to={`/projects/${project.id}`}
+        <button 
+          onClick={() => onViewCaseStudy(project)}
           className="block w-full py-2 px-4 bg-white border border-seo-blue text-seo-blue rounded-lg text-center font-medium hover:bg-seo-blue hover:text-white transition-colors duration-300"
         >
           View Case Study
-        </Link>
+        </button>
       </div>
     </div>
   );
