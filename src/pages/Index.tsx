@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { TrendingUp, Award, Database, Users, Rocket, Search } from 'lucide-react';
@@ -258,59 +257,14 @@ const Index = () => {
       {/* Keywords Cluster Section */}
       <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl font-bold mb-6">Strategic Keyword Targeting</h2>
-              <p className="text-gray-600 mb-6">
-                My approach to keyword research goes beyond basic tools to discover high-value opportunities that your competitors are missing.
-              </p>
-              
-              <div className="space-y-8">
-                <div className="flex">
-                  <div className="flex-shrink-0 mt-1">
-                    <div className="w-7 h-7 rounded-full bg-seo-blue flex items-center justify-center text-white font-medium">
-                      1
-                    </div>
-                  </div>
-                  <div className="ml-4">
-                    <h3 className="text-lg font-semibold mb-2">In-depth Research</h3>
-                    <p className="text-gray-600">
-                      Comprehensive keyword discovery using advanced tools and competitive analysis to identify valuable opportunities.
-                    </p>
-                  </div>
-                </div>
-                
-                <div className="flex">
-                  <div className="flex-shrink-0 mt-1">
-                    <div className="w-7 h-7 rounded-full bg-seo-purple flex items-center justify-center text-white font-medium">
-                      2
-                    </div>
-                  </div>
-                  <div className="ml-4">
-                    <h3 className="text-lg font-semibold mb-2">Strategic Clustering</h3>
-                    <p className="text-gray-600">
-                      Grouping semantically related keywords to create comprehensive content that ranks for multiple terms.
-                    </p>
-                  </div>
-                </div>
-                
-                <div className="flex">
-                  <div className="flex-shrink-0 mt-1">
-                    <div className="w-7 h-7 rounded-full bg-seo-green flex items-center justify-center text-white font-medium">
-                      3
-                    </div>
-                  </div>
-                  <div className="ml-4">
-                    <h3 className="text-lg font-semibold mb-2">Intent Mapping</h3>
-                    <p className="text-gray-600">
-                      Aligning keywords with user search intent to ensure your content delivers what searchers are looking for.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div className="transform transition-transform duration-700 hover:scale-105">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <h2 className="text-3xl font-bold mb-4">Strategic Keyword Targeting</h2>
+            <p className="text-gray-600">
+              My approach to keyword research goes beyond basic tools to discover high-value opportunities that your competitors are missing.
+            </p>
+          </div>
+          <div className="flex justify-center">
+            <div className="w-full max-w-4xl transform transition-transform duration-700 hover:scale-105">
               <KeywordVisualizer />
             </div>
           </div>
