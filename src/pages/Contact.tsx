@@ -5,6 +5,12 @@ import { useToast } from "@/hooks/use-toast";
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import CustomCursor from '../components/CustomCursor';
+import { 
+  Accordion, 
+  AccordionContent, 
+  AccordionItem, 
+  AccordionTrigger 
+} from "@/components/ui/accordion";
 
 interface FormData {
   name: string;
@@ -382,58 +388,72 @@ const Contact = () => {
         </div>
       </section>
       
-      {/* FAQs Section */}
+      {/* FAQs Section - Redesigned with Accordion */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="text-center max-w-3xl mx-auto mb-12">
             <h2 className="text-3xl font-bold mb-4">Frequently Asked Questions</h2>
             <p className="text-gray-600">
               Get answers to common questions about SEO services, processes, and outcomes.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            <div className="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition-shadow">
-              <h3 className="text-lg font-semibold mb-3">How long does it take to see SEO results?</h3>
-              <p className="text-gray-600">
-                SEO is a long-term strategy. Initial improvements can be seen within 2-3 months, but significant results typically take 4-6 months, depending on your industry, competition, and starting point.
-              </p>
-            </div>
-            
-            <div className="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition-shadow">
-              <h3 className="text-lg font-semibold mb-3">Do you guarantee first-page rankings?</h3>
-              <p className="text-gray-600">
-                No ethical SEO professional can guarantee specific rankings as search algorithms are complex and constantly changing. I focus on sustainable strategies that deliver long-term results rather than quick, temporary fixes.
-              </p>
-            </div>
-            
-            <div className="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition-shadow">
-              <h3 className="text-lg font-semibold mb-3">What makes your SEO services different?</h3>
-              <p className="text-gray-600">
-                My approach combines technical expertise with creative content strategies and transparent reporting. I focus on business outcomes, not just rankings, and tailor strategies to your specific goals and industry.
-              </p>
-            </div>
-            
-            <div className="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition-shadow">
-              <h3 className="text-lg font-semibold mb-3">Do you offer one-time audits or ongoing services?</h3>
-              <p className="text-gray-600">
-                I offer both comprehensive SEO audits as one-time projects and ongoing SEO management services. The best option depends on your specific needs and goals, which we can discuss during a consultation.
-              </p>
-            </div>
-            
-            <div className="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition-shadow">
-              <h3 className="text-lg font-semibold mb-3">How do you report on SEO progress?</h3>
-              <p className="text-gray-600">
-                I provide detailed monthly reports with key metrics like rankings, traffic, conversions, and backlinks. Each report includes analysis and recommendations, and I schedule regular calls to discuss progress and strategy.
-              </p>
-            </div>
-            
-            <div className="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition-shadow">
-              <h3 className="text-lg font-semibold mb-3">What industries do you specialize in?</h3>
-              <p className="text-gray-600">
-                I have extensive experience across various industries including e-commerce, SaaS, professional services, healthcare, real estate, and financial services. This diverse background helps me understand different business models and needs.
-              </p>
-            </div>
+          <div className="max-w-3xl mx-auto">
+            <Accordion type="single" collapsible className="bg-white rounded-xl shadow-sm">
+              <AccordionItem value="item-1" className="border-b border-gray-100 px-6">
+                <AccordionTrigger className="py-5 hover:no-underline">
+                  <span className="text-lg font-medium text-left">How long does it take to see SEO results?</span>
+                </AccordionTrigger>
+                <AccordionContent className="text-gray-600 pb-5">
+                  SEO is a long-term strategy. Initial improvements can be seen within 2-3 months, but significant results typically take 4-6 months, depending on your industry, competition, and starting point.
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem value="item-2" className="border-b border-gray-100 px-6">
+                <AccordionTrigger className="py-5 hover:no-underline">
+                  <span className="text-lg font-medium text-left">Do you guarantee first-page rankings?</span>
+                </AccordionTrigger>
+                <AccordionContent className="text-gray-600 pb-5">
+                  No ethical SEO professional can guarantee specific rankings as search algorithms are complex and constantly changing. I focus on sustainable strategies that deliver long-term results rather than quick, temporary fixes.
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem value="item-3" className="border-b border-gray-100 px-6">
+                <AccordionTrigger className="py-5 hover:no-underline">
+                  <span className="text-lg font-medium text-left">What makes your SEO services different?</span>
+                </AccordionTrigger>
+                <AccordionContent className="text-gray-600 pb-5">
+                  My approach combines technical expertise with creative content strategies and transparent reporting. I focus on business outcomes, not just rankings, and tailor strategies to your specific goals and industry.
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem value="item-4" className="border-b border-gray-100 px-6">
+                <AccordionTrigger className="py-5 hover:no-underline">
+                  <span className="text-lg font-medium text-left">Do you offer one-time audits or ongoing services?</span>
+                </AccordionTrigger>
+                <AccordionContent className="text-gray-600 pb-5">
+                  I offer both comprehensive SEO audits as one-time projects and ongoing SEO management services. The best option depends on your specific needs and goals, which we can discuss during a consultation.
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem value="item-5" className="border-b border-gray-100 px-6">
+                <AccordionTrigger className="py-5 hover:no-underline">
+                  <span className="text-lg font-medium text-left">How do you report on SEO progress?</span>
+                </AccordionTrigger>
+                <AccordionContent className="text-gray-600 pb-5">
+                  I provide detailed monthly reports with key metrics like rankings, traffic, conversions, and backlinks. Each report includes analysis and recommendations, and I schedule regular calls to discuss progress and strategy.
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem value="item-6" className="border-b border-gray-100 px-6">
+                <AccordionTrigger className="py-5 hover:no-underline">
+                  <span className="text-lg font-medium text-left">What industries do you specialize in?</span>
+                </AccordionTrigger>
+                <AccordionContent className="text-gray-600 pb-5">
+                  I have extensive experience across various industries including e-commerce, SaaS, professional services, healthcare, real estate, and financial services. This diverse background helps me understand different business models and needs.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </div>
         </div>
       </section>
