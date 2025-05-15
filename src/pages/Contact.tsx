@@ -1,7 +1,6 @@
-
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import { Mail, Phone, MapPin, Send, Clock, MessageSquare } from 'lucide-react';
+import { Send } from 'lucide-react';
 import { useToast } from "@/hooks/use-toast";
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -125,80 +124,13 @@ const Contact = () => {
         </div>
       </section>
       
-      {/* Contact Form & Info Section */}
+      {/* Contact Form Section - Centered */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
-            {/* Contact Info */}
-            <div className="lg:col-span-2">
-              <h2 className="text-2xl font-bold mb-6">Contact Information</h2>
-              
-              <div className="space-y-8 mb-12">
-                <div className="flex items-start">
-                  <div className="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center mr-4 flex-shrink-0">
-                    <Mail className="h-5 w-5 text-seo-blue" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-lg mb-1">Email</h3>
-                    <a href="mailto:hello@seoexpert.com" className="text-gray-600 hover:text-seo-blue transition-colors">
-                      hello@seoexpert.com
-                    </a>
-                  </div>
-                </div>
-                
-                <div className="flex items-start">
-                  <div className="w-12 h-12 rounded-full bg-green-50 flex items-center justify-center mr-4 flex-shrink-0">
-                    <Phone className="h-5 w-5 text-seo-green" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-lg mb-1">Phone</h3>
-                    <a href="tel:+1234567890" className="text-gray-600 hover:text-seo-blue transition-colors">
-                      +1 (234) 567-890
-                    </a>
-                  </div>
-                </div>
-                
-                <div className="flex items-start">
-                  <div className="w-12 h-12 rounded-full bg-purple-50 flex items-center justify-center mr-4 flex-shrink-0">
-                    <MapPin className="h-5 w-5 text-seo-purple" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-lg mb-1">Office</h3>
-                    <address className="text-gray-600 not-italic">
-                      123 SEO Street<br />
-                      New York, NY 10001<br />
-                      United States
-                    </address>
-                  </div>
-                </div>
-                
-                <div className="flex items-start">
-                  <div className="w-12 h-12 rounded-full bg-orange-50 flex items-center justify-center mr-4 flex-shrink-0">
-                    <Clock className="h-5 w-5 text-seo-orange" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-lg mb-1">Business Hours</h3>
-                    <p className="text-gray-600">
-                      Monday - Friday: 9AM - 5PM<br />
-                      Saturday & Sunday: Closed
-                    </p>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
-                <div className="flex items-center mb-4">
-                  <MessageSquare className="h-5 w-5 text-seo-blue mr-2" />
-                  <h3 className="font-semibold">Quick Response Guarantee</h3>
-                </div>
-                <p className="text-gray-600 text-sm">
-                  I prioritize communication and will respond to all inquiries within 24 hours. For urgent matters, please call the phone number listed above.
-                </p>
-              </div>
-            </div>
-            
-            {/* Contact Form */}
-            <div className="lg:col-span-3 bg-white rounded-xl shadow-md overflow-hidden border border-gray-100">
+          {/* Updated grid to center the form */}
+          <div className="flex justify-center">
+            {/* Contact Form - Now centered */}
+            <div className="w-full max-w-2xl bg-white rounded-xl shadow-md overflow-hidden border border-gray-100">
               <div className="p-8">
                 <h2 className="text-2xl font-bold mb-6">Send Me a Message</h2>
                 
