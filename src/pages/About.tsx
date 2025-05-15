@@ -66,31 +66,59 @@ const experiences = [
 const certifications = [
   {
     id: '1',
-    title: 'Google Analytics Advanced Certification',
+    title: 'Google Analytics 4 Certification',
     issuer: 'Google',
     year: '2024',
-    icon: 'https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-4.0.3&auto=format&fit=crop&w=64&h=64&q=80'
+    description: 'Advanced analytics implementation and data-driven marketing strategies'
   },
   {
     id: '2',
-    title: 'SEMrush SEO Fundamentals Certification',
+    title: 'Advanced SEO Certification',
     issuer: 'SEMrush Academy',
     year: '2023',
-    icon: 'https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-4.0.3&auto=format&fit=crop&w=64&h=64&q=80'
+    description: 'Comprehensive training on technical SEO, content optimization, and search algorithms'
   },
   {
     id: '3',
-    title: 'HubSpot Content Marketing Certification',
+    title: 'Content Marketing Certification',
     issuer: 'HubSpot Academy',
-    year: '2022',
-    icon: 'https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-4.0.3&auto=format&fit=crop&w=64&h=64&q=80'
+    year: '2023',
+    description: 'Strategic content creation, distribution, and measurement for digital marketing'
   },
   {
     id: '4',
-    title: 'Technical SEO Certification',
+    title: 'Technical SEO Professional',
     issuer: 'Moz Academy',
+    year: '2022',
+    description: 'Site architecture, crawlability optimization, and performance enhancement'
+  },
+  {
+    id: '5',
+    title: 'Schema Markup Specialist',
+    issuer: 'Schema App',
+    year: '2022',
+    description: 'Implementation of structured data for enhanced SERP visibility'
+  },
+  {
+    id: '6',
+    title: 'Advanced Google Ads Certification',
+    issuer: 'Google',
     year: '2021',
-    icon: 'https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-4.0.3&auto=format&fit=crop&w=64&h=64&q=80'
+    description: 'Search, display, and video advertising optimization for maximum ROI'
+  },
+  {
+    id: '7',
+    title: 'Digital Marketing Analytics',
+    issuer: 'MIT Sloan School of Management',
+    year: '2021',
+    description: 'Data analysis for marketing decision-making and strategy development'
+  },
+  {
+    id: '8',
+    title: 'Mobile Marketing Certification',
+    issuer: 'Facebook Blueprint',
+    year: '2020',
+    description: 'Mobile-first marketing strategies and platform-specific optimization'
   }
 ];
 
@@ -283,35 +311,34 @@ const About = () => {
         </div>
       </section>
       
-      {/* Certifications Section */}
+      {/* Certifications Section - Redesigned */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl font-bold mb-4">Certifications</h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-seo-blue to-seo-purple mx-auto mb-4"></div>
-            <p className="text-gray-600">
-              Continuous learning and professional development through industry-recognized certifications.
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-seo-blue to-seo-purple bg-clip-text text-transparent">Certifications</h2>
+            <div className="w-20 h-1 bg-gradient-to-r from-seo-blue to-seo-purple mx-auto mb-6"></div>
+            <p className="text-gray-600 text-lg">
+              Continuous professional development through industry-recognized certifications.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
-            {certifications.map((certification) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            {certifications.map((cert) => (
               <Card 
-                key={certification.id} 
-                className="bg-white border-0 shadow-md hover:shadow-xl transition-all hover:translate-y-[-5px]"
+                key={cert.id} 
+                className="bg-white border-l-4 border-l-seo-purple hover:border-l-seo-blue transition-all duration-300 shadow-sm hover:shadow-md"
               >
-                <CardContent className="p-6">
-                  <div className="flex items-center mb-4">
-                    <img 
-                      src={certification.icon} 
-                      alt={certification.issuer} 
-                      className="w-10 h-10 rounded-full object-cover mr-3"
-                    />
-                    <span className="text-sm text-gray-500">{certification.issuer}</span>
+                <CardContent className="p-5">
+                  <div className="mb-2 flex justify-between items-start">
+                    <h3 className="text-lg font-semibold text-gray-800">{cert.title}</h3>
                   </div>
-                  
-                  <h3 className="text-lg font-semibold mb-2">{certification.title}</h3>
-                  <p className="text-sm text-seo-blue">{certification.year}</p>
+                  <div className="flex flex-col gap-2">
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-medium text-gray-500">{cert.issuer}</span>
+                      <span className="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded-full">{cert.year}</span>
+                    </div>
+                    <p className="text-xs text-gray-600 mt-1">{cert.description}</p>
+                  </div>
                 </CardContent>
               </Card>
             ))}
