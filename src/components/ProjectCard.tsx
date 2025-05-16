@@ -24,6 +24,9 @@ interface ProjectCardProps {
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, onViewCaseStudy }) => {
+  // Determine if this is the Hamilton Law Partners project
+  const isHamiltonLawPartners = project.businessName === "Hamilton Law Partners";
+  
   return (
     <div 
       className="portfolio-item rounded-xl overflow-hidden bg-white shadow-md hover:shadow-xl transition-all duration-300"
@@ -62,7 +65,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, onViewCaseStu
         </div>
         
         <div className="absolute top-3 right-3 bg-transparent backdrop-blur-sm px-3 py-1 rounded-full text-xs font-medium text-seo-gray border border-white/20">
-          {project.industry}
+          {isHamiltonLawPartners ? "Law Firm" : project.industry}
         </div>
       </div>
       
