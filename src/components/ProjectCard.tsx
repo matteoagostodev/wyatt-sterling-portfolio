@@ -8,6 +8,7 @@ export interface Project {
   type: string;
   image: string;
   industry: string;
+  businessName: string; // Added businessName field
   description: string;
   stats: {
     rankingIncrease: number;
@@ -29,11 +30,23 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, onViewCaseStu
       style={{ animationDelay: `${index * 100}ms` }}
     >
       <div className="relative">
+        {/* Main image as background */}
         <img 
           src={project.image}
           alt={project.title}
-          className="w-full h-48 object-cover"
+          className="w-full h-48 object-cover opacity-80"
         />
+        
+        {/* Google Search Bar Style Overlay */}
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="bg-white w-5/6 mx-auto rounded-full shadow-lg p-3 flex items-center">
+            <Search className="h-5 w-5 text-seo-blue ml-2 mr-3" />
+            <div className="text-gray-800 font-medium truncate">
+              {project.businessName}
+            </div>
+          </div>
+        </div>
+        
         <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-medium text-seo-gray">
           {project.industry}
         </div>

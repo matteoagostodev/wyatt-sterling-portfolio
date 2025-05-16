@@ -13,15 +13,15 @@ interface ProjectDetailProps {
 const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onClose }) => {
   // Mock data for the detailed view
   const caseStudyDetails = {
-    description: `${project.description} This detailed SEO campaign was designed to address specific challenges faced by the client in the ${project.industry} sector, including low organic visibility, poor keyword rankings, and inadequate traffic conversion.`,
-    solution: `Our comprehensive approach included:
+    description: `${project.description} This detailed SEO campaign was designed to address specific challenges faced by ${project.businessName} in the ${project.industry} sector, including low organic visibility, poor keyword rankings, and inadequate traffic conversion.`,
+    solution: `Our comprehensive approach for ${project.businessName} included:
     • Technical SEO audit and implementation of site-wide improvements
     • Content gap analysis and strategic content development
     • Keyword research and on-page optimization targeting high-value search terms
     • Link building campaign focused on industry-relevant domains
     • Implementation of schema markup for enhanced SERP features
     • Local SEO optimization for improved regional visibility`,
-    results: `The campaign delivered substantial improvements across all key performance indicators:
+    results: `The campaign delivered substantial improvements across all key performance indicators for ${project.businessName}:
     • Significant increase in organic traffic quality and quantity
     • Improved SERP visibility for target keywords
     • Enhanced user engagement metrics
@@ -46,7 +46,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onClose }) => {
                 {project.type}
               </span>
               <h2 className="text-3xl font-bold text-gray-900">{project.title}</h2>
-              <p className="text-seo-gray">{project.industry}</p>
+              <p className="text-seo-gray">{project.industry} - {project.businessName}</p>
             </div>
             
             <Button 

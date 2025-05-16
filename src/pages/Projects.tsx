@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Search } from 'lucide-react';
@@ -13,8 +12,9 @@ const projects: Project[] = [
     id: '1',
     title: 'E-commerce Revenue Growth',
     type: 'E-commerce SEO',
-    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1515378960530-7c0da6231fb1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
     industry: 'Fashion Retail',
+    businessName: 'StyleVault',
     description: 'Complete SEO overhaul for a fashion e-commerce brand, resulting in significant organic traffic growth and increased conversions.',
     stats: {
       rankingIncrease: 145,
@@ -26,8 +26,9 @@ const projects: Project[] = [
     id: '2',
     title: 'Local Business Visibility',
     type: 'Local SEO',
-    image: 'https://images.unsplash.com/photo-1542744095-291d1f67b221?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1589829085413-56de8ae18c73?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
     industry: 'Professional Services',
+    businessName: 'Hamilton Law Partners',
     description: 'Comprehensive local SEO campaign for a law firm, dramatically improving their visibility in local search results and generating more qualified leads.',
     stats: {
       rankingIncrease: 28,
@@ -39,8 +40,9 @@ const projects: Project[] = [
     id: '3',
     title: 'SaaS Lead Generation',
     type: 'B2B SEO',
-    image: 'https://images.unsplash.com/photo-1535551951406-a19828b0a76b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
     industry: 'Software',
+    businessName: 'CloudMetrics',
     description: 'Strategic content and technical SEO campaign for a SaaS platform, resulting in a substantial increase in qualified leads and demo requests.',
     stats: {
       rankingIncrease: 87,
@@ -52,8 +54,9 @@ const projects: Project[] = [
     id: '4',
     title: 'Healthcare Provider Visibility',
     type: 'Healthcare SEO',
-    image: 'https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
     industry: 'Healthcare',
+    businessName: 'MediCare Solutions',
     description: 'Comprehensive SEO strategy for a healthcare provider, improving their online visibility and patient acquisition through organic search.',
     stats: {
       rankingIncrease: 54,
@@ -67,6 +70,7 @@ const projects: Project[] = [
     type: 'Real Estate SEO',
     image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
     industry: 'Real Estate',
+    businessName: 'Premier Properties',
     description: 'Strategic SEO campaign for a real estate agency, establishing them as the dominant force in their local market for property-related searches.',
     stats: {
       rankingIncrease: 67,
@@ -78,8 +82,9 @@ const projects: Project[] = [
     id: '6',
     title: 'Travel Blog Traffic Explosion',
     type: 'Content SEO',
-    image: 'https://images.unsplash.com/photo-1530521954074-e64f6810b32d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1521295121783-8a321d551ad2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
     industry: 'Travel',
+    businessName: 'Wanderlust Adventures',
     description: 'Content strategy and SEO implementation for a travel blog, resulting in exponential organic traffic growth and affiliate revenue.',
     stats: {
       rankingIncrease: 215,
