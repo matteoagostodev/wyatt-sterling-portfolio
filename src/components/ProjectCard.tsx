@@ -61,7 +61,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, onViewCaseStu
           </div>
         </div>
         
-        <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-medium text-seo-gray">
+        <div className="absolute top-3 right-3 bg-transparent backdrop-blur-sm px-3 py-1 rounded-full text-xs font-medium text-seo-gray border border-white/20">
           {project.industry}
         </div>
       </div>
