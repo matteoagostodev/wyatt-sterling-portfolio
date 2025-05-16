@@ -271,7 +271,7 @@ const Index = () => {
         </div>
       </section>
       
-      {/* Testimonials Section */}
+      {/* Testimonials Section - Modified */}
       <section className="bg-white py-20">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
@@ -288,26 +288,19 @@ const Index = () => {
                 className="bg-white rounded-xl shadow-md overflow-hidden flex flex-col h-full transform transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
                 style={{ animationDelay: `${index * 150}ms` }}
               >
-                <div className="relative p-6 flex-grow">
+                <div className="p-8 flex-grow flex flex-col">
                   {/* Quote mark in the background */}
-                  <div className="absolute top-4 right-4 text-gray-100 text-7xl font-serif select-none">
+                  <div className="text-gray-100 text-7xl font-serif mb-4 leading-none select-none">
                     "
                   </div>
                   
-                  <p className="text-gray-600 mb-6 relative z-10">
-                    "{testimonial.quote}"
+                  <p className="text-gray-600 mb-8 flex-grow">
+                    {testimonial.quote}
                   </p>
                   
-                  <div className="flex items-center">
-                    <img 
-                      src={testimonial.image} 
-                      alt={testimonial.name}
-                      className="w-12 h-12 rounded-full object-cover mr-4 border-2 border-seo-blue"
-                    />
-                    <div>
-                      <p className="font-bold text-gray-900">{testimonial.name}</p>
-                      <p className="text-sm text-gray-500">{testimonial.position}, {testimonial.company}</p>
-                    </div>
+                  <div className="mt-auto">
+                    <p className="font-bold text-gray-900">{testimonial.name}</p>
+                    <p className="text-sm text-gray-500">{testimonial.position}, {testimonial.company}</p>
                   </div>
                 </div>
                 
