@@ -16,7 +16,7 @@ const testimonials = [
     position: 'Marketing Director',
     company: 'TechStart Inc.',
     image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80',
-    quote: 'Working with this SEO specialist has transformed our digital presence. Our organic traffic has increased by 167% in just six months, and we\'re now ranking for keywords we never thought possible.'
+    quote: 'Our organic traffic increased by 167% in just six months. Best SEO investment we\'ve ever made.'
   },
   {
     id: '2',
@@ -24,7 +24,7 @@ const testimonials = [
     position: 'CEO',
     company: 'Innovative Solutions',
     image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80',
-    quote: 'The strategic approach to SEO delivered real business results. We\'ve seen a 43% increase in qualified leads coming from organic search since implementing the recommended changes.'
+    quote: '43% increase in qualified leads from organic search since implementing the recommended changes.'
   },
   {
     id: '3',
@@ -32,7 +32,7 @@ const testimonials = [
     position: 'E-commerce Manager',
     company: 'StyleFusion',
     image: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80',
-    quote: 'Our e-commerce conversions from organic traffic have doubled since working together. The technical SEO audit uncovered critical issues we had no idea were affecting our performance.'
+    quote: 'Our e-commerce conversions from organic traffic have doubled. The technical SEO audit was eye-opening.'
   }
 ];
 
@@ -271,13 +271,13 @@ const Index = () => {
         </div>
       </section>
       
-      {/* Testimonials Section - Modified */}
-      <section className="bg-white py-20">
+      {/* Testimonials Section - Redesigned */}
+      <section className="bg-gray-50 py-20">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl font-bold mb-4">Client Success Stories</h2>
             <p className="text-gray-600">
-              Don't just take my word for it. Here's what clients have to say about the results they've achieved through our collaboration.
+              Don't just take my word for it. Here's what clients have to say about the results they've achieved.
             </p>
           </div>
           
@@ -285,26 +285,22 @@ const Index = () => {
             {testimonials.map((testimonial, index) => (
               <div 
                 key={testimonial.id} 
-                className="bg-white rounded-xl shadow-md overflow-hidden flex flex-col h-full transform transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+                className="bg-white rounded-xl overflow-hidden flex flex-col h-full transform transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border border-gray-100"
                 style={{ animationDelay: `${index * 150}ms` }}
               >
-                <div className="p-8 flex-grow flex flex-col">
-                  {/* Quote mark in the background */}
-                  <div className="text-gray-100 text-7xl font-serif mb-4 leading-none select-none">
-                    "
-                  </div>
+                <div className="h-2 w-full bg-gradient-to-r from-seo-blue via-seo-purple to-seo-green"></div>
+                <div className="p-6 flex-grow flex flex-col">
+                  <div className="text-seo-purple text-4xl font-serif mb-3">❝</div>
                   
-                  <p className="text-gray-600 mb-8 flex-grow">
+                  <p className="text-gray-700 italic mb-6 flex-grow text-lg">
                     {testimonial.quote}
                   </p>
                   
-                  <div className="mt-auto">
+                  <div className="mt-auto pt-4 border-t border-gray-100">
                     <p className="font-bold text-gray-900">{testimonial.name}</p>
                     <p className="text-sm text-gray-500">{testimonial.position}, {testimonial.company}</p>
                   </div>
                 </div>
-                
-                <div className="h-2 w-full bg-gradient-to-r from-seo-blue via-seo-purple to-seo-green"></div>
               </div>
             ))}
           </div>
