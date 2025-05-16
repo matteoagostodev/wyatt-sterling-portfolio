@@ -3,6 +3,7 @@ import React from 'react';
 import { X } from 'lucide-react';
 import { Button } from './ui/button';
 import { Project } from './ProjectCard';
+import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 
 interface ProjectDetailProps {
   project: Project;
@@ -36,79 +37,85 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onClose }) => {
   };
 
   return (
-    <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center overflow-y-auto p-4">
+    <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center overflow-y-auto p-4">
       <div className="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-xl">
-        <div className="relative">
-          <img 
-            src={project.image}
-            alt={project.title}
-            className="w-full h-64 object-cover"
-          />
-          
-          <Button 
-            variant="ghost" 
-            size="icon"
-            onClick={onClose} 
-            className="absolute top-4 right-4 bg-white/80 hover:bg-white text-gray-800 rounded-full"
-          >
-            <X />
-            <span className="sr-only">Close</span>
-          </Button>
-          
-          <div className="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black/80 to-transparent text-white">
-            <div className="mb-2">
-              <span className="inline-block text-xs font-semibold bg-seo-blue/90 text-white rounded-full px-2 py-1 mb-2">
+        <div className="relative p-6">
+          <div className="flex items-center justify-between mb-4">
+            <div>
+              <span className="inline-block text-xs font-semibold bg-seo-blue/90 text-white rounded-full px-3 py-1 mb-2">
                 {project.type}
               </span>
+              <h2 className="text-3xl font-bold text-gray-900">{project.title}</h2>
+              <p className="text-seo-gray">{project.industry}</p>
             </div>
-            <h2 className="text-2xl font-bold">{project.title}</h2>
-            <p className="text-white/80">{project.industry}</p>
+            
+            <Button 
+              variant="ghost" 
+              size="icon"
+              onClick={onClose} 
+              className="bg-gray-100 hover:bg-gray-200 text-gray-800 rounded-full"
+            >
+              <X />
+              <span className="sr-only">Close</span>
+            </Button>
           </div>
-        </div>
-        
-        <div className="p-6">
-          <div className="mb-8">
-            <h3 className="text-xl font-bold mb-3">Challenge & Description</h3>
-            <p className="text-gray-700">
-              {caseStudyDetails.description}
-            </p>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+            <Card className="border-l-4 border-l-seo-blue">
+              <CardHeader className="pb-2">
+                <CardTitle className="text-xl text-seo-blue">Challenge & Description</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-700">
+                  {caseStudyDetails.description}
+                </p>
+              </CardContent>
+            </Card>
+            
+            <Card className="border-l-4 border-l-seo-green">
+              <CardHeader className="pb-2">
+                <CardTitle className="text-xl text-seo-green">Our Solution</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-700 whitespace-pre-line">
+                  {caseStudyDetails.solution}
+                </p>
+              </CardContent>
+            </Card>
           </div>
           
-          <div className="mb-8">
-            <h3 className="text-xl font-bold mb-3">Our Solution</h3>
-            <p className="text-gray-700 whitespace-pre-line">
-              {caseStudyDetails.solution}
-            </p>
-          </div>
+          <Card className="border-l-4 border-l-seo-purple mb-8">
+            <CardHeader className="pb-2">
+              <CardTitle className="text-xl text-seo-purple">Results</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-gray-700 whitespace-pre-line">
+                {caseStudyDetails.results}
+              </p>
+            </CardContent>
+          </Card>
           
           <div className="mb-8">
-            <h3 className="text-xl font-bold mb-3">Results</h3>
-            <p className="text-gray-700 whitespace-pre-line">
-              {caseStudyDetails.results}
-            </p>
-          </div>
-          
-          <div className="mb-6">
-            <h3 className="text-xl font-bold mb-4">Key Performance Indicators</h3>
+            <h3 className="text-xl font-bold mb-4 text-gray-900">Key Performance Indicators</h3>
             <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-              <div className="bg-gray-50 p-4 rounded-lg text-center">
-                <div className="text-2xl font-bold text-seo-green">+{caseStudyDetails.kpis.rankingIncrease}</div>
+              <div className="bg-gradient-to-br from-blue-50 to-white p-4 rounded-lg text-center shadow-sm border border-blue-100">
+                <div className="text-3xl font-bold text-seo-green">+{caseStudyDetails.kpis.rankingIncrease}</div>
                 <p className="text-sm text-gray-600">Keyword Rankings</p>
               </div>
-              <div className="bg-gray-50 p-4 rounded-lg text-center">
-                <div className="text-2xl font-bold text-seo-purple">+{caseStudyDetails.kpis.trafficIncrease}%</div>
+              <div className="bg-gradient-to-br from-purple-50 to-white p-4 rounded-lg text-center shadow-sm border border-purple-100">
+                <div className="text-3xl font-bold text-seo-purple">+{caseStudyDetails.kpis.trafficIncrease}%</div>
                 <p className="text-sm text-gray-600">Traffic Increase</p>
               </div>
-              <div className="bg-gray-50 p-4 rounded-lg text-center">
-                <div className="text-2xl font-bold text-seo-blue">{caseStudyDetails.kpis.backlinks}</div>
+              <div className="bg-gradient-to-br from-blue-50 to-white p-4 rounded-lg text-center shadow-sm border border-blue-100">
+                <div className="text-3xl font-bold text-seo-blue">{caseStudyDetails.kpis.backlinks}</div>
                 <p className="text-sm text-gray-600">New Backlinks</p>
               </div>
-              <div className="bg-gray-50 p-4 rounded-lg text-center">
-                <div className="text-2xl font-bold text-seo-green">+{caseStudyDetails.kpis.conversionRate}%</div>
+              <div className="bg-gradient-to-br from-green-50 to-white p-4 rounded-lg text-center shadow-sm border border-green-100">
+                <div className="text-3xl font-bold text-seo-green">+{caseStudyDetails.kpis.conversionRate}%</div>
                 <p className="text-sm text-gray-600">Conversion Rate</p>
               </div>
-              <div className="bg-gray-50 p-4 rounded-lg text-center">
-                <div className="text-2xl font-bold text-red-500">-{caseStudyDetails.kpis.bounceRateReduction}%</div>
+              <div className="bg-gradient-to-br from-red-50 to-white p-4 rounded-lg text-center shadow-sm border border-red-100">
+                <div className="text-3xl font-bold text-red-500">-{caseStudyDetails.kpis.bounceRateReduction}%</div>
                 <p className="text-sm text-gray-600">Bounce Rate</p>
               </div>
             </div>
