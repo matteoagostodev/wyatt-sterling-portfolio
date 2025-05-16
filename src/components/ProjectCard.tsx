@@ -8,7 +8,7 @@ export interface Project {
   type: string;
   image: string;
   industry: string;
-  businessName: string; // Added businessName field
+  businessName: string;
   description: string;
   stats: {
     rankingIncrease: number;
@@ -30,20 +30,34 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, onViewCaseStu
       style={{ animationDelay: `${index * 100}ms` }}
     >
       <div className="relative">
-        {/* Main image as background */}
-        <img 
-          src={project.image}
-          alt={project.title}
-          className="w-full h-48 object-cover opacity-80"
-        />
-        
-        {/* Google Search Bar Style Overlay */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="bg-white w-5/6 mx-auto rounded-full shadow-lg p-3 flex items-center">
-            <Search className="h-5 w-5 text-seo-blue ml-2 mr-3" />
-            <div className="text-gray-800 font-medium truncate">
-              {project.businessName}
+        {/* Google search background */}
+        <div className="w-full h-48 bg-white relative">
+          {/* Google logo */}
+          <div className="absolute top-4 left-0 right-0 flex justify-center">
+            <div className="text-2xl font-bold tracking-tight">
+              <span className="text-blue-500">G</span>
+              <span className="text-red-500">o</span>
+              <span className="text-yellow-500">o</span>
+              <span className="text-blue-500">g</span>
+              <span className="text-green-500">l</span>
+              <span className="text-red-500">e</span>
             </div>
+          </div>
+          
+          {/* Google Search Bar Style Overlay */}
+          <div className="absolute top-1/2 left-0 right-0 flex items-center justify-center">
+            <div className="bg-white w-5/6 mx-auto rounded-full shadow-md p-3 flex items-center border border-gray-200 hover:shadow-lg transition-shadow">
+              <Search className="h-5 w-5 text-seo-blue ml-2 mr-3" />
+              <div className="text-gray-800 font-medium truncate">
+                {project.businessName}
+              </div>
+            </div>
+          </div>
+          
+          {/* Bottom section with search buttons */}
+          <div className="absolute bottom-4 left-0 right-0 flex justify-center space-x-2">
+            <div className="bg-gray-100 px-3 py-1 rounded-md text-xs text-gray-600">Google Search</div>
+            <div className="bg-gray-100 px-3 py-1 rounded-md text-xs text-gray-600">I'm Feeling Lucky</div>
           </div>
         </div>
         
