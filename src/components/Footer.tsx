@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
-            <h2 className="text-2xl font-bold mb-6">SEO<span className="text-seo-blue">Expert</span></h2>
+            <h2 className="text-2xl font-bold mb-6">Summit<span className="text-seo-blue">Rank</span></h2>
             <p className="text-gray-400 mb-6">
               Elevating your online presence through data-driven SEO strategies and proven results.
             </p>
@@ -26,7 +26,7 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-gray-800 mt-12 pt-6 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400 text-sm">© 2025 SEOExpert. All rights reserved.</p>
+          <p className="text-gray-400 text-sm">© 2025 SummitRank. All rights reserved.</p>
           <div className="mt-4 md:mt-0">
             <a href="#" className="text-gray-400 hover:text-seo-blue text-sm mr-6 transition-colors">Privacy Policy</a>
             <a href="#" className="text-gray-400 hover:text-seo-blue text-sm transition-colors">Terms of Service</a>
